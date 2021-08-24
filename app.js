@@ -36,3 +36,20 @@ function changeSlide(direction) {
     mainSlide.style.transform = `translateY(-${activeSlideIndex * height}px)`
     sidebar.style.transform = `translateY(${activeSlideIndex * height}px)`
 }
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowUp") {
+      changeSlide("up")
+    } else if (event.key === "ArrowDown") {
+      changeSlide("down")
+    }
+  })
+
+  document.body.addEventListener("mousewheel", (e) => {
+    var delta = e.deltaY
+    if (delta > 0) {
+      changeSlide("up")
+    } else if (delta < 0) {
+      changeSlide("down")
+    }
+  })
