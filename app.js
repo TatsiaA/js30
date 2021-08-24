@@ -37,19 +37,21 @@ function changeSlide(direction) {
     sidebar.style.transform = `translateY(${activeSlideIndex * height}px)`
 }
 
-document.addEventListener("keydown", (event) => {
-    if (event.key === "ArrowUp") {
-      changeSlide("up")
-    } else if (event.key === "ArrowDown") {
-      changeSlide("down")
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowUp') {
+      changeSlide('up')
+    } else if (event.key === 'ArrowDown') {
+      changeSlide('down')
     }
   })
 
-  document.body.addEventListener("mousewheel", (e) => {
+  document.body.addEventListener('mousewheel', (e) => {
     var delta = e.deltaY
     if (delta > 0) {
-      changeSlide("up")
+      changeSlide('up')
     } else if (delta < 0) {
-      changeSlide("down")
+      changeSlide('down')
     }
   })
+
+  console.log ('Score: 30/30, добавлено пролистывание слайдов колесиком мыши и кнопками навигации клавиатуры')
