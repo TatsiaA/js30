@@ -17,7 +17,7 @@ body {
     height: 100vh;
 }
 
-.sidebar {
+.right-slider {
     height: 100%;
     width: 30%;
     position: absolute;
@@ -26,7 +26,7 @@ body {
     transition: transform 1.5s ease-in-out;
 }
 
-.sidebar > div {
+.right-slider > div {
     height: 100%;
     width: 100%;
     display: flex;
@@ -36,17 +36,17 @@ body {
     color: #ffffff;
 }
 
-.sidebar h1 {
+.right-slider h2 {
     font-size: 100px;
     margin-bottom: 10px;
     margin-top: -30px;
 }
 
-.sidebar p {
+.right-slider p {
     font-size: 45px;
 }
 
-.slide {
+.left-slider {
     height: 100%;
     position: absolute;
     top: 0;
@@ -55,7 +55,7 @@ body {
     transition: transform 1.5s ease-in-out;
 }
 
-.slide > div {
+.left-slider > div {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -66,7 +66,7 @@ body {
 button {
     border: none;
     color: #317c7c;
-    background-color: #ffffff;  
+    background-color: #ffffff;
     font-family: 'Allison', cursive;
     cursor: pointer;
     font-size: 20px;
@@ -91,7 +91,7 @@ button:focus {
 .container .controls .down_button {
     transform: translateX(-100%);
     border-radius: 10px;
-    
+
 }
 
 .container .controls .up_button {

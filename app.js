@@ -1,57 +1,53 @@
-const upBtn = document.querySelector('.up_button')
-const downBtn = document.querySelector('.down_button')
-const sidebar = document.querySelector('.sidebar')
-const container = document.querySelector('.container')
-const mainSlide = document.querySelector('.slide')
-const slidesCount = mainSlide.querySelectorAll('div').length
+const upBtn = document.querySelector('.up_button');
+const downBtn = document.querySelector('.down_button');
+const container = document.querySelector('.container');
+const sliderRight = document.querySelector('.right-slider');
+const sliderLeft = document.querySelector('.left-slider');
+const slidesCount = sliderLeft.querySelectorAll('div').length;
 
-let activeSlideIndex = 0
+let activeSlideIndex = 0;
 
-sidebar.style.top = `-${(slidesCount - 1) * 100}vh`
+sliderRight.style.top = `-${(slidesCount - 1) * 100}vh`;
 
 upBtn.addEventListener('click', () => {
-    changeSlide('up')
-}) 
+    changeSlide('up');
+});
 
 downBtn.addEventListener('click', () => {
-    changeSlide('down')
-}) 
+    changeSlide('down');
+});
 
 function changeSlide(direction) {
+    const height = container.clientHeight;
     if (direction === 'up') {
-        activeSlideIndex++
+        activeSlideIndex++;
         if (activeSlideIndex === slidesCount) {
-            activeSlideIndex = 0
+            activeSlideIndex = 0;
         }
     } else if (direction === 'down') {
-        activeSlideIndex--
+        activeSlideIndex--;
         if (activeSlideIndex < 0) {
-            activeSlideIndex = slidesCount - 1
+            activeSlideIndex = slidesCount - 1;
         }
     }
 
-
-    const height = container.clientHeight
-
-    mainSlide.style.transform = `translateY(-${activeSlideIndex * height}px)`
-    sidebar.style.transform = `translateY(${activeSlideIndex * height}px)`
+    sliderLeft.style.transform = `translateY(-${activeSlideIndex * height}px)`;
+    sliderRight.style.transform = `translateY(${activeSlideIndex * height}px)`;
 }
 
 document.addEventListener('keydown', (event) => {
     if (event.key === 'ArrowUp') {
-      changeSlide('up')
+      changeSlide('up');
     } else if (event.key === 'ArrowDown') {
-      changeSlide('down')
+      changeSlide('down');
     }
-  })
+  });
 
   document.body.addEventListener('mousewheel', (e) => {
     var delta = e.deltaY
     if (delta > 0) {
-      changeSlide('up')
+      changeSlide('up');
     } else if (delta < 0) {
-      changeSlide('down')
+      changeSlide('down');
     }
-  })
-
-  console.log ('Score: 30/30, добавлено пролистывание слайдов колесиком мыши и кнопками навигации клавиатуры')
+  });
