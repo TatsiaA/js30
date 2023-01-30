@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Allison&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Allison', cursive;
+    height: 100vh;
+}
+
+.container {
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.right-slider {
+    height: 100%;
+    width: 30%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 1.5s ease-in-out;
+}
+
+.right-slider > div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.right-slider h2 {
+    font-size: 100px;
+    margin-bottom: 10px;
+    margin-top: -30px;
+}
+
+.right-slider p {
+    font-size: 45px;
+}
+
+.left-slider {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 30%;
+    width: 70%;
+    transition: transform 1.5s ease-in-out;
+}
+
+.left-slider > div {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+
+button {
+    border: none;
+    color: #317c7c;
+    background-color: #ffffff;
+    font-family: 'Allison', cursive;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 15px;
+}
+
+button:hover {
+    color: #191231;
+}
+
+button:focus {
+    outline: none;
+}
+
+.container .controls button {
+    position: absolute;
+    left: 30%;
+    top: 50%;
+    z-index: 100;
+}
+
+.container .controls .down_button {
+    transform: translateX(-100%);
+    border-radius: 10px;
+
+}
+
+.container .controls .up_button {
+    transform: translateY(-100%);
+    border-radius: 10px;
+}
